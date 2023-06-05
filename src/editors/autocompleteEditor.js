@@ -58,7 +58,7 @@ function onBeforeKeyDown(event) {
 
   if (isPrintableChar(event.keyCode) || event.keyCode === KEY_CODES.BACKSPACE ||
     event.keyCode === KEY_CODES.DELETE || event.keyCode === KEY_CODES.INSERT) {
-    let timeOffset = 0;
+    let timeOffset = 20;
 
     // on ctl+c / cmd+c don't update suggestion list
     if (event.keyCode === KEY_CODES.C && (event.ctrlKey || event.metaKey)) {

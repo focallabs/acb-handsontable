@@ -24,7 +24,7 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * 
  * Version: 6.2.2
- * Release date: 19/12/2018 (built at 18/12/2018 14:40:17)
+ * Release date: 19/12/2018 (built at 05/06/2023 11:41:23)
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -24168,7 +24168,7 @@ function onBeforeKeyDown(event) {
   var editor = this.getActiveEditor();
 
   if ((0, _unicode.isPrintableChar)(event.keyCode) || event.keyCode === _unicode.KEY_CODES.BACKSPACE || event.keyCode === _unicode.KEY_CODES.DELETE || event.keyCode === _unicode.KEY_CODES.INSERT) {
-    var timeOffset = 0; // on ctl+c / cmd+c don't update suggestion list
+    var timeOffset = 20; // on ctl+c / cmd+c don't update suggestion list
 
     if (event.keyCode === _unicode.KEY_CODES.C && (event.ctrlKey || event.metaKey)) {
       return;
@@ -24230,6 +24230,7 @@ AutocompleteEditor.prototype.open = function () {
 
         if (indexOfMatch !== -1) {
           match = cellValue.substr(indexOfMatch, _this.query.length);
+          console.log('match', match, _this.query, this.query);
           cellValue = cellValue.replace(match, "<strong>".concat(match, "</strong>"));
         }
       }
@@ -29734,7 +29735,7 @@ Handsontable.DefaultSettings = _defaultSettings.default;
 Handsontable.EventManager = _eventManager.default;
 Handsontable._getListenersCounter = _eventManager.getListenersCounter; // For MemoryLeak tests
 
-Handsontable.buildDate = "18/12/2018 14:40:17";
+Handsontable.buildDate = "05/06/2023 11:41:23";
 Handsontable.packageName = "handsontable";
 Handsontable.version = "6.2.2";
 var baseVersion = "";
